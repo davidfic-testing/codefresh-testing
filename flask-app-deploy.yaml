@@ -21,7 +21,8 @@ spec:
         run: flask
     spec:
       containers:
-      - image: gcr.io/kubernetes-testing-186304/github-davidfic-spinn-test:006d10e4e5cc25bfafc74fd179f0cd170891543f
+        #      - image: gcr.io/kubernetes-testing-186304/github-davidfic-spinn-test:006d10e4e5cc25bfafc74fd179f0cd170891543f
+      - image: davidfic/spinntest:latest 
         name: flask-app
         ports:
         - containerPort: 5000
