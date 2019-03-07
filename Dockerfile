@@ -1,9 +1,8 @@
-FROM ubuntu:latest
+FROM python:3.6.8-alpine3.9
 MAINTAINER David Ficociello "davidfic@gmail.com"
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
-COPY . /app
+COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
+COPY . /app
 ENTRYPOINT ["python"]
 CMD ["flask-app.py"]
