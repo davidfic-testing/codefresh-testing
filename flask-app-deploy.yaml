@@ -21,7 +21,6 @@ spec:
         run: flask
     spec:
       containers:
-        #      - image: gcr.io/kubernetes-testing-186304/github-davidfic-spinn-test:006d10e4e5cc25bfafc74fd179f0cd170891543f
       - image: davidfic/codefresh-test:latest 
         name: flask-app
         ports:
@@ -29,3 +28,20 @@ spec:
         imagePullPolicy: Always
       dnsPolicy: ClusterFirst
       restartPolicy: Always
+---      
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app
+  labels:
+    run: flask
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    run: flask
+
+
