@@ -4,7 +4,7 @@ metadata:
   labels:
     run: flask
   name: flask-app
-  namespace: default
+  namespace: codefresh
 spec:
   replicas: 3
   selector:
