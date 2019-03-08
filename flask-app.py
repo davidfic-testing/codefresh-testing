@@ -13,9 +13,13 @@ def hello_world():
 def test():
     return 'this is a new test route'
 
-@app.route('/third/')
+@app.route('/third')
 def third(name):
     return render_template('hello.html', name=name)
-           
+
+@app.route('four')
+def four():
+    return jsonfiy('hello there')
+
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
