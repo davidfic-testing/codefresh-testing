@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 from flask import render_template
 from flask_bootstrap import Bootstrap
 
@@ -14,12 +15,12 @@ def test():
     return 'this is a new test route'
 
 @app.route('/third')
-def third(name):
+def third():
     return render_template('hello.html', name=name)
 
-@app.route('four')
+@app.route('/four')
 def four():
-    return jsonfiy('hello there')
+    return jsonify('hello there')
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
