@@ -13,7 +13,7 @@ def hello_world():
 def test():
     return 'this is a new test route'
 
-@app.route('/third/<name>')
+@app.route('/third/')
 def third(name):
     return render_template('hello.html', name=name)
            
