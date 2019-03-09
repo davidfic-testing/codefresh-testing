@@ -26,5 +26,9 @@ def four():
 def five():
     return jsonify('number 5')
 
+@app.route('/six')
+def six():
+    return jsonify('number 6')
+
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
