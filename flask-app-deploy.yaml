@@ -21,7 +21,7 @@ spec:
         run: flask
     spec:
       containers:
-      - image: davidfic/codefresh-test:latest 
+      - image: davidfic/codefresh-test:master 
         name: flask-app
         ports:
         - containerPort: 5000
